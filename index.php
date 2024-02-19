@@ -6,7 +6,9 @@
     $ext = ".php";
     $fullPath = $path . $className . $ext;
 
-    include_once $fullPath;
+    if (file_exists($fullPath)) {
+        include_once $fullPath;
+    }
    }
 ?>
 
@@ -27,13 +29,14 @@
 
             </div>
             <div class='task-form-wrapper'>
-                <form action="">
+                <form action="scripts/addTask.php" method='POST'>
                     <label for="new-task-name">
-                        <input type="text" name="task-name" id="new-task-name">
+                        <input type="text" name="new-task-name" id="new-task-name">
                     </label>
                     <label for="new-task-description">
-                        <input type="text" name="description" id="new-task-description">
+                        <input type="text" name="new-task-description" id="new-task-description">
                     </label>
+                    <button type='submit' name='submit'>Submit</button>
                 </form>
             </div>
         </div>

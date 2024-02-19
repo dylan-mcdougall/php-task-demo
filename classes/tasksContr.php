@@ -3,7 +3,7 @@
     class TasksContr extends Tasks {
         private $taskName;
         private $description;
-        private $dateCreated
+        private $dateCreated;
 
         public function __construct($taskName, $description, $dateCreated) {
             $this->taskName = $taskName;
@@ -13,7 +13,7 @@
 
         private function emptyInput() {
             $res;
-            if (empty($this->$taskName) || empty($this->description)) {
+            if (empty($this->taskName) || empty($this->description)) {
                 $res = false;
             } else {
                 $res = true;
@@ -21,9 +21,9 @@
             return $res;
         }
 
-        public function createTask($taskName, $description, $dateCreated) {
-            if (!$this->emptyInput()) {
-                $this->setTask($taskName, $description, $dateCreated);
+        public function createTask() {
+            if ($this->emptyInput() == true) {
+                $this->setTask($this->taskName, $this->description, $this->dateCreated);
             } else {
                 header("location: ../index.php?error=emptyinput");
                 exit();
