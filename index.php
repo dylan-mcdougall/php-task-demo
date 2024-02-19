@@ -25,8 +25,8 @@
     </div>
 
     <?php
-    $object = new Db;
-    $object->connect();
+    $object = new TasksView();
+    $object->showTask();
     ?>
 </body>
 </html>
