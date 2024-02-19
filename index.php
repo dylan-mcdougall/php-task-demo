@@ -23,11 +23,18 @@
             <div class='header-wrapper'>
                 <h1>AWSome PHProject</h1>
             </div>
-            <div class='interface'>
-                <button class='add-task'>Add Task</button>
-            </div>
-            <div class='primary-body'>
+            <div class='all-tasks-wrapper'>
 
+            </div>
+            <div class='task-form-wrapper'>
+                <form action="">
+                    <label for="new-task-name">
+                        <input type="text" name="task-name" id="new-task-name">
+                    </label>
+                    <label for="new-task-description">
+                        <input type="text" name="description" id="new-task-description">
+                    </label>
+                </form>
             </div>
         </div>
     </div>

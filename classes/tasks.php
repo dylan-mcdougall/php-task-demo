@@ -12,7 +12,7 @@
         }
 
         protected function getTask($taskName) {
-            $sql = "SELECT * FROM tasks WHERE tasks_taskName = ?";
+            $sql = "SELECT * FROM tasks WHERE taskName = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$taskName]);
 
@@ -22,7 +22,7 @@
         }
 
         protected function setTask($taskName, $description, $dateCreated) {
-            $sql = "INSERT INTO tasks(tasks_taskName, tasks_description, tasks_dateCreated) VALUES (?, ?, ?)";
+            $sql = "INSERT INTO tasks(taskName, description, dateCreated) VALUES (?, ?, ?)";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$taskName, $description, $dateCreated]);
         }
@@ -32,7 +32,7 @@
         // }
 
         protected function deleteTask($id) {
-            $sql = "DELETE FROM tasks WHERE tasks_id = ?";
+            $sql = "DELETE FROM tasks WHERE id = ?";
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute([$id]);
         }
