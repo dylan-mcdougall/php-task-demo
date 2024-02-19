@@ -1,3 +1,7 @@
+<?php
+    include_once "db.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,5 +23,10 @@
             </div>
         </div>
     </div>
+
+    <?php
+    $object = new Db;
+    $object->connect();
+    ?>
 </body>
 </html>
