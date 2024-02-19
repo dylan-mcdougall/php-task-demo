@@ -7,7 +7,7 @@ class Db {
     private $dbname;
     private $charset;
 
-    public function connect() {
+    protected function connect() {
         $this->servername = "localhost";
         $this->username = "root";
         $this->password = "";

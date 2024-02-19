@@ -24,7 +24,14 @@
         protected function setTask($taskName, $description, $dateCreated) {
             $sql = "INSERT INTO tasks(taskName, description, dateCreated) VALUES (?, ?, ?)";
             $stmt = $this->connect()->prepare($sql);
-            $stmt->execute([$taskName, $description, $dateCreated]);
+
+            if (!$stmt->execute([$taskName, $description, $dateCreated])) {
+                $stmt = null;
+                header("location: ../index.php?error=stmtfailed");
+                exit();
+            }
+
+            // create truthy condition to enable checking
         }
 
         // protected function updateTask($id, $taskName, $description, $dateCreated) {
