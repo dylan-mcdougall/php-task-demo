@@ -1,5 +1,13 @@
 <?php
-    include_once "classes/db.php"
+   spl_autoload_register('AutoLoader');
+
+   function AutoLoader($className) {
+    $path = "classes/";
+    $ext = ".php";
+    $fullPath = $path . $className . $ext;
+
+    include_once $fullPath;
+   }
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +34,7 @@
 
     <?php
     $object = new TasksView();
-    $object->showTask();
+    $object->showAllTasks();
     ?>
 </body>
 </html>

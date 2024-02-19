@@ -1,6 +1,16 @@
 <?php
 
     class Tasks extends Db {
+        protected function getAllTasks() {
+            $sql = "SELECT * FROM tasks";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+
+            $res = $stmt->fetchAll();
+
+            return $res;
+        }
+
         protected function getTask($taskName) {
             $sql = "SELECT * FROM tasks WHERE tasks_taskName = ?";
             $stmt = $this->connect()->prepare($sql);
