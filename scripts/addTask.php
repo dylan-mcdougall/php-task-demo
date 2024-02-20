@@ -1,7 +1,6 @@
 <?php
 
- 
-if (isset($_POST["submit"])) {
+if (isset($_POST["new-task-submit"])) {
 
     // Grab data
     $taskName = $_POST["new-task-name"];
@@ -17,6 +16,6 @@ if (isset($_POST["submit"])) {
     // Error handling
     $task->createTask();
 
-    header("location: ../index.php?error=none");
+    echo 'Task Successfully Deleted.';
     exit();
 }

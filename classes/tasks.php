@@ -30,8 +30,6 @@
                 header("location: ../index.php?error=stmtfailed");
                 exit();
             }
-
-            // create truthy condition to enable checking
         }
 
         // protected function updateTask($id, $taskName, $description, $dateCreated) {
@@ -41,7 +39,12 @@
         protected function deleteTask($id) {
             $sql = "DELETE FROM tasks WHERE id = ?";
             $stmt = $this->connect()->prepare($sql);
-            $stmt->execute([$id]);
+
+            if (!$stmt->execute([$id])) {
+                $stmt = null;
+                header("location: ../index.php?error=stmtfailed");
+                exit();
+            }
         }
     }
 

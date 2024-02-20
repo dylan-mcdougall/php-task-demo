@@ -3,13 +3,7 @@
     class TasksView extends Tasks {
         public function showAllTasks() {
             $tasks = $this->getAllTasks();
-
-            foreach ($tasks as $task) {
-                $taskName = $task['taskName'] ?? '';
-                $dateCreated = $task['dateCreated'] ?? '';
-                $description = $task['description'] ?? '';
-                echo "{$taskName} {$dateCreated} <br> {$description}<br>";
-            }
+            return $tasks;
         }
 
         public function showTask($taskName) {
