@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    build: .
+    build: ./php-task-demo
     ports:
       - "8080:80"
   db:
@@ -13,4 +13,4 @@ services:
       MYSQL_USER: user1
       MYSQL_PASSWORD: password
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./php-task-demo/init.sql:/docker-entrypoint-initdb.d/init.sql

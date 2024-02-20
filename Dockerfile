@@ -6,11 +6,7 @@ WORKDIR /var/www/html
 
 RUN ls -la
 
-COPY . /var/www/html
-
-COPY ./classes /var/www/html/classes
-
-COPY ./scripts /var/www/html/scripts
+COPY . .
 
 EXPOSE 80
 
