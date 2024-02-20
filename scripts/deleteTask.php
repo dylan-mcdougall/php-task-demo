@@ -11,7 +11,7 @@ if (isset($_POST['taskId'])) {
 
     $task->removeTask($taskId);
 
-    header("location: ../index.php?error=none");
+    echo "Task Successfully Deleted.";
     exit();
 }
 

@@ -16,6 +16,6 @@ if (isset($_POST["new-task-submit"])) {
     // Error handling
     $task->createTask();
 
-    echo 'Task Successfully Deleted.';
+    header("location: ../index.php?error=none");
     exit();
 }

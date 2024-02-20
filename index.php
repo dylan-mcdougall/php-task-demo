@@ -17,6 +17,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='index.css' />
     <title>PHP Task Manager</title>
 </head>
 <body>
@@ -74,10 +75,12 @@
             <div class='task-form-wrapper'>
                 <form action="scripts/addTask.php" method='POST'>
                     <label for="new-task-name">
+                        Task Name
                         <input type="text" name="new-task-name" id="new-task-name">
                     </label>
                     <label for="new-task-description">
-                        <input type="text" name="new-task-description" id="new-task-description">
+                        Description
+                        <input type="textarea" name="new-task-description" id="new-task-description">
                     </label>
                     <button type='submit' name='new-task-submit'>Submit</button>
                 </form>

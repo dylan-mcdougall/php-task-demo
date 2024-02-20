@@ -1,0 +1,47 @@
+.page-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+}
+
+.page-wrapper-flex {
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-wrapper {
+    text-align: center;
+}
+
+.primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+}
+
+.all-tasks-wrapper {
+    width: 50%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-top {
+    display: flex;
+}
+
+.task-form-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
