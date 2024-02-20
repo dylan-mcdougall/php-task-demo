@@ -8,7 +8,7 @@ class Db {
     private $charset;
 
     protected function connect() {
-        $this->host = "php-task-demo-db-1";
+        $this->host = "db";
         $this->username = "user1";
         $this->password = "password";
         $this->dbname = "testdb";
