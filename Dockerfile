@@ -6,7 +6,7 @@ WORKDIR /var/www/html
 
 RUN ls -la
 
-COPY . /var/www/html/
+COPY . /var/www/html
 
 COPY ./classes /var/www/html/classes
 

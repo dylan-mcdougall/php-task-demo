@@ -13,11 +13,7 @@
 include __DIR__ . "/classes/db.php";
 include __DIR__ . "/classes/tasks.php";
 include __DIR__ . "/classes/tasksContr.php";
-if (include __DIR__ . "/classes/tasksView.php") {
-    echo "tasksView.php included successfully";
-} else {
-    echo "Error including tasksView.php";
-}
+include __DIR__ . "/classes/tasksView.php";
 ?>
 
 <!DOCTYPE html>
