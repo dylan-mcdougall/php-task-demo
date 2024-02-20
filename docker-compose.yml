@@ -9,6 +9,6 @@ services:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: task_manager
+      MYSQL_DATABASE: testdb
       MYSQL_USER: user
       MYSQL_PASSWORD: password

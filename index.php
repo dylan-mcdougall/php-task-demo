@@ -1,15 +1,23 @@
 <?php
-   spl_autoload_register('AutoLoader');
+//    spl_autoload_register('AutoLoader');
 
-   function AutoLoader($className) {
-    $path = "classes/";
-    $ext = ".php";
-    $fullPath = $path . $className . $ext;
+//    function AutoLoader($className) {
+//     $path = "classes/";
+//     $ext = ".php";
+//     $fullPath = $path . $className . $ext;
 
-    if (file_exists($fullPath)) {
-        include_once $fullPath;
-    }
-   }
+//     if (file_exists($fullPath)) {
+//         include_once $fullPath;
+//     }
+//    }
+include __DIR__ . "/classes/db.php";
+include __DIR__ . "/classes/tasks.php";
+include __DIR__ . "/classes/tasksContr.php";
+if (include __DIR__ . "/classes/tasksView.php") {
+    echo "tasksView.php included successfully";
+} else {
+    echo "Error including tasksView.php";
+}
 ?>
 
 <!DOCTYPE html>
