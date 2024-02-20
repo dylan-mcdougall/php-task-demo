@@ -2,11 +2,15 @@ FROM php:7.4-apache
 
 RUN docker-php-ext-install pdo_mysql
 
-WORKDIR /php-task-demo
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
-RUN ls -la
+WORKDIR /var/www/html
 
-COPY . .
+COPY . /var/www/html
+
+COPY ./classes /var/www/html/classes
+
+COPY ./scripts /var/www/html/scripts
 
 EXPOSE 80
 
