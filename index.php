@@ -37,20 +37,22 @@
                 ?>
 
 
-<!--- Show all tasks --->
+                <!--- Show all tasks --->
 
-<div class='all-tasks-wrapper'>
-    <h2>Task List</h2>
-        <!--- Logic for empty tasks --->
-        
-        <?php
-        if (empty($tasks)) { ?>
-            <div class='task-item'>
-                <div class='no-content'>
-                    <p>Please add Tasks to begin</p>
-                </div>
-            </div>
-        <?php } ?>
+                <div class='all-tasks-wrapper'>
+                    <h2>Task List</h2>
+                    <!--- Logic for empty tasks --->
+                        
+                    <?php
+                    if (empty($tasks)) { ?>
+                        <div class='task-item'>
+                            <div class='no-content'>
+                                <p>Please add Tasks to begin</p>
+                            </div>
+                        </div>
+                    <?php } ?>
+
+                    
                     <?php foreach ($tasks as $task) { ?>
                         <div class='task-item'>
                             <div class='content'>
