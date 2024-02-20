@@ -31,60 +31,66 @@
             <!--- Core wrapper --->
 
             <div class='primary'>
-            <?php
-            $object = new TasksView();
-            $tasks = $object->showAllTasks();
-            ?>
+                <?php
+                $object = new TasksView();
+                $tasks = $object->showAllTasks();
+                ?>
 
-            <!--- Logic for empty tasks --->
 
-            <?php
-            if (empty($tasks)) { ?>
-                <div class='task-item'>
-                    <div class='no-content'>
-                        <p>Please add Tasks to begin</p>
-                    </div>
+<!--- Show all tasks --->
+
+<div class='all-tasks-wrapper'>
+    <h2>Task List</h2>
+        <!--- Logic for empty tasks --->
+        
+        <?php
+        if (empty($tasks)) { ?>
+            <div class='task-item'>
+                <div class='no-content'>
+                    <p>Please add Tasks to begin</p>
                 </div>
-            <?php } ?>
+            </div>
+        <?php } ?>
+                    <?php foreach ($tasks as $task) { ?>
+                        <div class='task-item'>
+                            <div class='content'>
+                                <div class='content-top'>
+                                    <h5><?php echo $task['taskName']; ?></h5>
 
-            <!--- Show all tasks --->
+                                    <!--- Delete a Task--->
 
-            <div class='all-tasks-wrapper'>
-                <?php foreach ($tasks as $task) { ?>
-                    <div class='task-item'>
-                        <div class='content'>
-                            <div class='content-top'>
-                                <h5><?php echo $task['taskName']; ?></h5>
-                                <p><?php echo $task['dateCreated'] ?></p>
+                                    <button type='submit' name='remove-task' onclick="handleDelete(<?php echo $task['id']; ?>)" id=<?php echo $task['id'] ?> > x </button>
 
-                                <!--- Delete a Task--->
-
-                                <button type='submit' name='remove-task' onclick="handleDelete(<?php echo $task['id']; ?>)" id=<?php echo $task['id'] ?> > x </button>
-
-                            </div>
-                            <div class='content-description'>
-                                <p><?php echo $task['description'] ?></p>
+                                </div>
+                                <div class='content-description'>
+                                    <p><?php echo $task['description'] ?></p>
+                                </div>
+                                <div class='content-bottom'>
+                                    <p><?php echo $task['dateCreated'] ?></p>
+                                </div>
                             </div>
                         </div>
+                    <?php } ?>
+                </div>
+
+                <!--- Add a task --->
+
+                <div class='task-form-wrapper'>
+                    <h2>Create A Task</h2>
+                    <div class='task-form-flex'>
+                        <form action="scripts/addTask.php" method='POST'>
+                            <label for="new-task-name">
+                                Task Name
+                                <input type="text" name="new-task-name" id="new-task-name" />
+                            </label>
+                            <label for="new-task-description">
+                                Description
+                                <textarea rows='4' cols='40' name="new-task-description" id="new-task-description"></textarea>
+                            </label>
+                            <button type='submit' name='new-task-submit'>Submit</button>
+                        </form>
                     </div>
-                <?php } ?>
-            </div>
-
-            <!--- Add a task --->
-
-            <div class='task-form-wrapper'>
-                <form action="scripts/addTask.php" method='POST'>
-                    <label for="new-task-name">
-                        Task Name
-                        <input type="text" name="new-task-name" id="new-task-name">
-                    </label>
-                    <label for="new-task-description">
-                        Description
-                        <input type="textarea" name="new-task-description" id="new-task-description">
-                    </label>
-                    <button type='submit' name='new-task-submit'>Submit</button>
-                </form>
-            </div>
+                </div>
 
             </div>
         </div>

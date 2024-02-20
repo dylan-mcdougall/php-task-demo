@@ -1,3 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
 .page-wrapper {
     height: 100%;
     width: 100%;
@@ -7,11 +14,15 @@
     background-color: aqua;
 }
 
-.page-wrapper-flex {
-    height: 80%;
-    width: 80%;
+.page-flex {
+    height: 90%;
+    width: 90%;
+    margin: 2rem;
     display: flex;
     flex-direction: column;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 2px black;
 }
 
 .header-wrapper {
@@ -20,15 +31,35 @@
 
 .primary {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: space-evenly;
     height: 100%;
-    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
 }
 
 .all-tasks-wrapper {
-    width: 50%;
+    width: 40%;
+    margin: 1rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.all-tasks-wrapper > h2 {
+    text-align: center;
+}
+
+.task-item {
+    border: .5px solid grey;
+    border-radius: 4px;
+    margin: .5rem;
+    padding: .5rem;
+}
+
+.no-content {
+    text-align: center;
 }
 
 .content {
@@ -38,10 +69,84 @@
 
 .content-top {
     display: flex;
+    justify-content: space-between;
+}
+
+.content-top > h5 {
+    margin: .5rem;
+}
+
+.content-top > button {
+    background-color: white;
+    border: none;
+    color: red;
+    margin: .5rem;
+    border-radius: 1000px;
+}
+
+.content-top > button:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.content-description > p {
+    margin: .15rem;
+}
+
+.content-bottom {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+}
+
+.content-bottom > p {
+    margin: .15rem;
 }
 
 .task-form-wrapper {
     display: flex;
     flex-direction: column;
+    margin: 2rem;
+    width: 40%;
+    margin: 1rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 1rem;
 }
 
+.task-form-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-form-flex > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: .5rem;
+}
+
+.task-form-wrapper label {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+    width: 100%;
+}
+
+.task-form-wrapper > h2 {
+    text-align: center;
+}
+
+.task-form-flex button {
+    width: 20%;
+    border-radius: 4px;
+    border: .5px solid black;
+    margin: .25rem;
+}
+
+.task-form-flex button:hover {
+    cursor: pointer;
+}
